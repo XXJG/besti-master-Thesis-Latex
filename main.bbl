@@ -1,0 +1,29 @@
+\begin{thebibliography}{\bstlabelmark}
+\interlinepenalty=10000
+\setlength{\itemsep}{0bp}\setlength{\parskip}{0pt}\small
+\bibitem{wang1999sanwei} 王浩刚, 聂在平.
+  三维矢量散射积分方程中奇异性分析[J]. 电子学报, 1999,
+  27(12): 68-71
+\bibitem{liuxf2006} X.~F. Liu, B.~Z. Wang, W.~Shao, et~al. A
+  marching-on-in-order scheme for exact attenuation constant extraction of
+  lossy transmission lines[C]. China-Japan Joint Microwave Conference
+  Proceedings, Chengdu, 2006, 527-529
+\bibitem{zhu1973wulixue} 竺可桢. 物理学[M]. 北京: 科学出版社,
+  1973, 56-60
+\bibitem{chen2001hao} 陈念永.
+  毫米波细胞生物效应及抗肿瘤研究[D]. 成都: 电子科技大学,
+  2001, 50-60
+\bibitem{gu2012lao} 顾春. 牢牢把握稳中求进的总基调[N].
+  人民日报, 2012年3月31日
+\bibitem{feng997he} 冯西桥. 核反应堆压力容器的{LBB}分析[R].
+  北京: 清华大学核能技术设计研究院, 1997年6月25日
+\bibitem{xiao2012yi} 肖珍新. 一种新型排渣阀调节降温装置[P].
+  中国, 实用新型专利, ZL201120085830.0, 2012年4月25日
+\bibitem{zhong1994zhong} 中华人民共和国国家技术监督局.
+  GB3100-3102. 中华人民共和国国家标准--量与单位[S]. 北京:
+  中国标准出版社, 1994年11月1日
+\bibitem{clerc2010discrete} M.~Clerc. Discrete particle swarm optimization: a
+  fuzzy combinatorial box[EB/OL].
+  \url{http://clere.maurice.free.fr/pso/Fuzzy_Discrere_PSO/Fuzzy_DPSO.htm},
+  July 16, 2010
+\end{thebibliography}
