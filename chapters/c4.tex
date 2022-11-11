@@ -1,0 +1,124 @@
+\chapter{高吞吐率的信息调同算法研究}
+\label{ch4}
+
+\emph{\kaishu 衣带渐宽终不悔，为伊消得人憔悴。}
+
+\emph{\kaishu \hfill ---柳永}\\
+
+经过高精准离线序列同步后，Alice 和 Bob 间的比特串由于模拟系统不可避免的差异仍然有不一致的地方，所以需要通过信息调同技术使两边的比特序列达成一致。
+
+\section{信息调同问题模型}
+信息调同问题最早由 Bennett 提出并应用于量子密钥分发\cite{bennett1992experimental}，随
+后 Brassard 提出信息调同的公开讨论模型使其正式步入实用化\cite{brassard1993secret}。
+
+
+
+\begin{definition}{(\textbf{信息调同的信道编码等效模型，Equivalent model of information reconciliation as channel coding})：}
+	$\mathcal{M}$是具有距离函数$dis$的度量空间（Metric Space），一个参数为$(\mathcal{M},m,\tilde{m},t)$的信息调同算法分为“产生”（GEN）和“重建”（REC）两个阶段，具有如下三个性质：
+	\begin{itemize}
+		\item 在产生阶段，输入$w\in \mathcal{M}$，输出辅助数据$GEN(w)=h\in \{0,1\}^*$；
+		\item 在重建阶段，输入$w' \in \mathcal{M}$和产生阶段输出的辅助数据$h$，在保证$dis(w,w')\leq t$的前提下，能够得到$REC(w',h)=w$；
+		\item 安全性保障：对$\mathcal{M}$上的任意分布$W$都有极小熵$m$，$W$的值可以被第三方通过观察辅助数据$s$获得的信息不超过$2^{-\tilde{m}}$，即$\tilde{H}_{\infty}(W|h)\geq \tilde{m}$。
+	\end{itemize}
+\end{definition}
+
+
+XXXXX。
+
+\section{基于BCH码的高速纠错方案}
+\subsection{编译码方案}
+BCH 码是一种典型的线性分组码，在码长较短时具有出色的性能表现。他的结构简单，易于实现，在资源受限的场景下很受欢迎。因此目前常见的PUF认证系统以及大多数 SSD 控制器大多采用 BCH 码作为其纠错方案。BCH 码在码长 $n$ ，信息位长度 $k$ ，和纠错能力 $t$ 之间存在严格的代数关系。对于任何的正整数 $m \geq 3$并且$t<2^{(m-1)}$ ，都会存在一个如式 (\ref{eq4-1}) 所示参数的一个二元 BCH 码。
+
+
+
+\begin{equation}
+	\left\{
+	\begin{split}
+		n=2^m-1 \\
+		n-k \leq mt \\
+		d_{min}\geq 2t+1
+	\end{split}
+	\right.
+	\label{eq4-1}
+\end{equation}
+
+
+\begin{algorithm}[H]
+	\KwData{$R(x)$, $LT$, $ALT$, $blockNum$}
+	\KwResult{译码码字$C$}
+	Initialize parameters, $\sigma^{(0)}(x)=1$, $D(0)=0$, $d_0=s_1$, $\sigma^{(-\frac{1}{2})}(x)=1$, $D(-\frac{1}{2})=0$, $d_{-\frac{1}{2}}=1$\;
+	$\#$pragma omp parallel for shared($LT$, $ALT$) firstprivate($R(x)$)\;
+	threadNum = 0\;
+	\While{threadNum < $blockNum$}{
+		计算 syndrome polynomial $S=\{s_1,s_2,\cdots,s_{2t}\}=\{R(\alpha),R(\alpha^2),\cdots,R(\alpha^{2t-1})\}$\;
+		从BM算法计算错误位置多项式\;
+		\While{$j < 2t$}{
+			\If {$d_j==0$}{
+				$\sigma^{j+1}(x)=\sigma^{j}(x)$\;
+				$D(j+1)=D(j)$\;
+			}
+			\Else {
+				计算$d_{j+1}$\;
+				$\sigma^{j+1}(x)=\sigma^{j}(x)-d_jd_i^{-1}x^{j-i}\sigma^{i}(x)$\;
+			}
+			一直迭代直到计算出$\sigma^{t}(x)$\;	    
+		}
+		从Chien搜索算法计算$\sigma(x)$的根，根取反即错误位置\;	
+		threadNum = threadNum + 1\;
+	}
+	The output is codeword $C$\;
+	\caption{优化后的BCH码译码器}
+	\label{alg4-1}
+\end{algorithm}
+
+XXXXXX。
+
+\subsection{实验结果与分析}
+
+本文在室温实验室环境下采集孪生超晶格 PUF 的输出，通过高精准序列同步算法后量化为二元序列，并按照码长$n=4095$进行分组总共得到 120,000 组数据。
+
+
+XXXXX。
+
+\section{基于LDPC码的高速纠错方案}
+
+在上一节中我们提出了基于BCH码的超晶格信息调同高速纠错方案，但是BCH码在码长较长时性能表现一般，速度差强人意，无法满足更高速率的超晶格密钥分发系统的需求，因此需要更高效的纠错方案来加快系统吞吐率。
+
+\subsection{编译码方案}
+1963 年，Robert G. Gallager 的博士论文中论述了校验矩阵为稀疏矩阵的纠错码，进而创新性的提出一种新的线性分组码，LDPC 码。刚开始提出由于当时计算机的计算性能的限制和理论研究的现状导致当时被认为是不符合实际的，使其无法得到长足发展。MacKay，Luby 在上世纪 90 年代重新将 LDPC 码进一步发展\cite{mackay1996near}，随着计算机存储和计算性能的逐渐发展 LDPC 码逐渐成为研究热点方向，在目前计算机的高速发展的今天，LDPC 码以其在各种信道上提供接近香农限的性能立足在各大传输和存储设备的纠错编码的应用上。
+
+XXXXXX。
+
+
+\subsection{实验结果与分析}
+
+同上一节BCH码优化方案测试吞吐率使用相同的超晶格数据，对于设计的这四种LDPC码，按照码长进行分组我们同样测试了 120,000 组码字数据。
+
+XXXXX。
+
+\section{基于Polar码的高速纠错方案}
+
+Polar 码是一种由信道极化理论演化而来的新型线性分组纠错码，于 2007 年被 Arikan 提出。Polar 码由于其优异的性能一经提出便受到广泛关注，对于超晶格密钥分发系统也是如此，Polar 码的诸多特性使其对超晶格密钥分发系统的纠错方案极其匹配。首先，Polar 码是第一个在理论上被证明可以达到香农限的纠错码，是一类具有较低的编码和译码复杂度的纠错码，尤其在码长较长时表现优异。再者，和LDPC码不同的是，Polar 码和 BCH 码一样容易构造，只要确定了码长和码率其结构就可以确定。此外，Polar 码的另外一个重要特点是其译码器的规则递归结构，使得译码器的软件实现速度大大高于其他纠错码\cite{mori2009performance}。
+
+\subsection{编译码方案}
+
+XXXXX。
+
+
+
+\subsection{实验结果与分析}
+
+
+
+XXXX。
+
+
+\section{分析比较}
+
+XXXX。
+
+
+
+
+\section{本章小结}
+在本章中，我们提出了一种针对超晶格密钥分发系统的多线程高吞吐率的信息调同纠错方案，本文提出的纠错优化方案可以高效地应用于不同的场景。XXXX。

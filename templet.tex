@@ -1,0 +1,44 @@
+
+\documentclass[refcompress,eversion,noinfo]{BESTIthesis}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{diagbox}
+\usepackage[subrefformat=parens,labelformat=parens]{subfig}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{amsthm}
+\usepackage{algorithmic}
+\usetikzlibrary{positioning} % L ATEX and plain TEX
+
+%\newtheorem{theorem}{定理}
+%%\newtheorem{corollary}{Corollary}
+%\newtheorem{lemma}{引理}
+%\newtheorem{definition}{定义}
+\newtheorem{theorem}{定理}[chapter] % 如果不采用章节号做前缀， 则不用[section], thm 是自定义的 Theorem 的缩写, 下同
+\newtheorem{definition}[theorem]{定义} % 这句定义使得 defn 环境和 thm 共享编号
+\newtheorem{lemma}[theorem]{引理}  % 这句定义使得 lem 环境和 thm 共享编号
+
+\renewcommand{\proofname}{\textbf{证明}}
+
+
+
+\graphicspath{{figures/}}
+
+\begin{document}
+　
+\BESTIfrontmatter
+\include{chapters/abstract}
+\BESTImainmatter
+\include{chapters/c1}
+\include{chapters/c2}
+\include{chapters/c3}
+\include{chapters/c4}
+\include{chapters/c5}
+\include{chapters/c6}
+\include{chapters/c7}
+\BESTIbackmatter{\bibliography{bib/tex}}
+\include{chapters/thanks}
+\include{chapters/resume}
+\end{document}

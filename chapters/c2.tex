@@ -1,0 +1,133 @@
+
+\chapter{超晶格密钥分发后处理算法基础}
+\label{ch2}
+
+\emph{\kaishu 合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。}
+
+\emph{\kaishu \hfill ---老子}\\
+
+
+本章介绍了一些基本定义、示例等用于描述基本概念和基础知识。其中包括信息论基础、信道编码基础以及一致哈希函数提取器等相关内容。
+
+
+\section{熵}
+
+
+香农于 1948 年在“通信的数学原理”一文中首次将物理热力学中熵的概念引入信息论中，因而迎来信息论学科研究的热点。信息是指某一过程中包含的不确定性，而熵就是用来度量这种不确定性的指标，它反映了在观察一个值之前预测该值的不确定性（熵值）\cite{gray2011entropy}。
+
+\begin{definition}{(\textbf{香农熵，Shannon Entropy})：}
+	设随机变量$X$的取值为$x_1,x_2,...,x_n$，与之对应的分布概率为$p_1,p_2,...,p_n$。则$X$的香农熵为
+	\begin{equation}
+		H(X)=-\sum_{i=1}^{n}p_i\log p_i.
+	\end{equation}
+\end{definition}
+
+
+
+相比较于上述香农熵的讨论，本文更关注Rényi熵。Rényi熵是Alfred Rényi于 1976 年提出的对香农熵、碰撞熵、极小熵的推广。在后文的保密增强算法中，二阶Rényi熵是能从理论上被证明可以提取出无条件安全的密钥，而相关文献也报道了关于利用香农熵提取密钥的安全风险问题。
+\begin{definition}{(\textbf{Rényi熵，Rényi Entropy})：}
+	设随机变量$X$的取值为$x_1,x_2,...,x_n$，与之对应的概率为$p_1,p_2,...,p_n$。则$X$的Rényi熵为
+	\begin{equation}
+		H_{\alpha}(X)=\frac{1}{1-\alpha}\log (\sum_{i=1}^{n}p_i^{\alpha}).
+	\end{equation}
+\end{definition}
+当$\alpha=1$时，上式表示 Shannon 熵，当$\alpha=2$时，即二阶Rényi熵，也称作碰撞熵，此时式中的概率表示为碰撞概率$p_c(i)$。但是很多物理系统计算其碰撞熵是相当复杂的，因此目前许多文献都表明计算极小熵用于提取无条件安全的密钥方案是切实可行的。当$\alpha=\infty$时，定义极小熵如下：
+\begin{definition}{(\textbf{极小熵，Min-Entropy})：}
+	设随机变量$X$的可预测性用$\max_xP[X=x]$表示，那么随机变量$X$的极小熵定义为
+	\begin{equation}
+		H_{\infty}(X)=-\log(\max_xP[X=x]).
+	\end{equation}
+\end{definition}
+通常情况下，平均极小熵更为准确，因为实际系统中攻击者有各种因素在平均情况下获得与随机变量$X$不独立的事件$Y$。
+\begin{definition}{(\textbf{平均极小熵，Average Min-Entropy})：}
+	给一对随机变量$X$和$Y$，假如对手知道随机变量$Y$中的$y$，则变量$X$的可预测性用$\max_x P[X=x|Y=y]$表示, 所以对手以$E_{y\leftarrow Y}(\max_x P[X=x|Y=y])$预测$X$，那么变量$X$的平均极小熵定义为
+	\begin{equation}
+		\tilde{H}_{\infty}(X|Y)=-\log(E_{y\leftarrow Y}(\max_x P[X=x|Y=y]))=-\log(E_{y\leftarrow Y}(2^{-H_{\infty}(X|Y=y)})).
+	\end{equation}
+\end{definition}
+
+
+\section{信道编码基础}
+\subsection{纠错码介绍}
+基于上述互信息量的介绍，我们可以分析有噪信道下的信息保真传输问题，即香农第二定理，有噪信道编码定理，设信道的输入为$X$，输出为$Y$，首先定义信道容量为$C=\max_{P(X)}I(X;Y)$。
+\begin{theorem}{(\textbf{有噪信道编码定理，Noisy channel coding theorem})：}
+	每个信道都有自己对应的信道容量$C$，当信息编码码率$R\leq C$且码长足够长的情况下，总可以找到一个码字，可以使用最大似然译码，使得误码率随着码长$N$的增加而减小至趋于0。
+\end{theorem}
+香农提出有噪信道编码定理之后，各种纠错码实现方案如雨后竹笋般出现\cite{zhuxue2001}，追求香农为我们设定的天花板。
+
+
+XXXX。
+
+\subsection{信道模型}
+用$\mathcal{X}$表示信道输入，$\mathcal{Y}$表示信道输出。对于离散信道模型\cite{lin2001error}，我们用离散概率$Pr_{Y|X}(y|x)$描述随机变量$X$和$Y$的信道模型。对于连续信道模型，我们用条件密度$f_{Y|X}(y|x)$表示。如果$|\mathcal{X}|=2$表示二元输入信道，即$\mathcal{X}=\{-1,+1\}$或$\mathcal{X}=\{0,1\}$。
+
+\begin{definition}{(\textbf{二元擦除信道，Binary erasure channel, BEC})：}
+	参数为$\epsilon$的二元擦除信道表示为$BEC(\epsilon)$。信道输入端的随机变量$X$可以取值$x\in X=\{-1,+1\}$，信道输出端的随机变量$Y$可以取值$y\in Y=\{-1,?,+1\}$。转移概率表示如下：
+	
+	\begin{equation}
+		Pr_{Y|X}(y|x)=\left\{
+		\begin{array}{rcl}
+			1-\epsilon,       &      & {y=x,}\\
+			\epsilon,     &      & {y=?,}\\
+			0,     &      & {otherwise}
+		\end{array} \right.
+	\end{equation}
+	
+\end{definition}
+
+
+XXX。
+
+\subsection{BCH码}
+XXXX。
+
+\subsection{LDPC码}
+低密度奇偶校验（Low-density parity-check, LDPC）码是由 Gallager 于 1963 年提出\cite{gallager1962low}，并且证明了 LDPC 码的性能接近信道容量且非常易于实现。但是 LDPC 码在当时由于计算机计算能力受限和存储较小等问题导致当时的人们认为该码是不符合实际的（impractical）。在上世纪 90 年代由于计算机存储和计算技术的蓬勃发展，LDPC 码被 MacKay，Luby 等人重新提出，从而进入研究的热点，并很快成为深空通信，移动通信，卫星通信等信道编码标准\cite{ryan2009channel}。
+
+XXXX。
+
+
+\subsection{Polar码}
+Polar 码一种基于信道极化理论的线性分组码，由土耳其 Bilkent 大学教授 Erdal Arikan 于 2007 年提出\cite{arikan2011systematic}，应用 Polar 码时，首先选定码长$n$和信息位长度$k$，然后需要对所选的信道进行极化，此时可以确定 Polar 码放入编译码结构。Polar 码的编码过程和 BCH 码等代数编码思想一致，译码过程采用串行抵消译码算法，时间复杂度为$O(n\log n)$。Polar 码是目前唯一被证明在$n\rightarrow \infty$时、利用串行抵消译码算法性能达到香农限的纠错码。
+
+
+XXXX。
+
+
+\section{提取器基础知识}
+\subsection{强提取器和统计距离}
+
+随机性提取也叫做提取器，是指从弱安全的原始随机序列提取出与均匀分布统计距离可忽略的无条件安全随机数的函数。提取器自提出之后便得到广泛研究，无论是在密码学上还是计算机中的分布式计算都实现了大规模应用，尤其在物理随机数发生器的后处理过程。由于弱提取器的密钥不可公开导致无法开展实际应用，本文叙述的提取器若不具体说明均为强提取器。首先定义两个分布的统计距离如下：
+
+\begin{definition}{(\textbf{统计距离，Statistical Distance})：}
+	设$X$和$Y$是集合$\mathcal{M}$上的两个随机变量，$X$和$Y$之间的统计距离定义为：
+	\begin{equation}
+		\mathbf{SD}(X,Y)=\frac{1}{2}\sum_{\omega}|Pr[X=\omega]-Pr[Y=\omega]|.
+	\end{equation}
+\end{definition}
+如果$X$和$Y$之间的统计距离$\mathbf{SD}(X,Y)\leq \epsilon$，则称$X$和$Y$是$\epsilon$统计接近的，如果$\epsilon$是可忽略的，则称$X$和$Y$是统计不可区分的。如果对于提取出的随机数与均匀分布的统计距离$\epsilon$是可忽略的，那么即可认为提取器输出的随机数是可用的。
+
+\begin{definition}{(\textbf{强提取器，Strong Extractor})：}
+	对于式子$Ext:\{0,1\}^n \times \{0,1\}^r\ \rightarrow \{0,1\}^l$，如果对于所有的最小熵为$m$的分布$W$,有
+	\begin{equation}
+		\mathbf{SD}((Ext(W;X),X),(U_l,X)) \leq \epsilon,
+	\end{equation}
+	其中$X$是$\{0,1\}^r$上的均匀分布，$U_l$表示$l$比特的均匀分布的随机数，则$Ext$是一个$(n,m,l,\epsilon)$强提取器
+	
+\end{definition}
+
+
+\subsection{一致哈希函数}
+经典密码学中的哈希函数通常具有单向性、雪崩性等特点，可作为提取器使用，但是单个哈希函数对于所有的输入无法满足提取器的要求。一致哈希函数簇是一族哈希函数的统称，每次均匀的从一族哈希函数中选择一个应用于待提取样本。
+
+
+
+
+
+
+
+
+\section{本章小结}
+本章介绍了超晶格密钥分发后处理技术的相关基础知识，包括信息论基础，信道编码基础，提取器相关内容介绍，这部分内容为信息调同、保密增强等后处理技术打下了坚实的基础。XX。
+
+

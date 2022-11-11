@@ -1,0 +1,137 @@
+\chapter{信息论安全的保密增强算法研究}
+\label{ch5}
+
+\emph{\kaishu 众里寻他千百度，蓦然回首，那人却在，灯火阑珊处。}
+
+\emph{\kaishu \hfill ---辛弃疾}\\
+
+保密增强是超晶格密钥分发系统实现安全密钥提取的至关重要的步骤，其目标是剔除超晶格原始输出不足熵以及后处理过程中攻击者可能获取的部分密钥串信息，并生成相对于攻击者而言信息论安全的密钥。
+
+\section{保密增强问题模型}
+
+XXXXXX。
+
+
+\section{极小熵评估}
+\subsection{定义和假设}
+
+
+XXXXXX。
+
+
+\subsection{基于超晶格PUF的随机模型}
+
+XXXXXXXXX。
+
+
+\subsection{极小熵结果与分析}
+
+在本节中，我们在室温实验室环境下采集多组超晶格PUF的原始输出数据，对提出的极小熵估计算法进行了多组实验以得到准确的评估结果。
+
+
+
+$$P=\begin{bmatrix}  
+	0.088235 & 0.058824 & 0.147059 & 0.147059 & 0.235294 & 0.117647 & 0.029412 & 0.176471 \\
+	0.205882 & 0.088235 & 0.235294 & 0.000000 & 0.058824 & 0.205882 & 0.088235 & 0.117647 \\
+	0.073171 & 0.170732 & 0.170732 & 0.146341 & 0.048780 & 0.073171 & 0.170732 & 0.146341 \\ 
+	0.147059 & 0.088235 & 0.147059 & 0.117647 & 0.117647 & 0.147059 & 0.117647 & 0.117647 \\
+	0.113636 & 0.090909 & 0.113636 & 0.113636 & 0.295455 & 0.068182 & 0.136364 & 0.068182 \\
+	0.114286 & 0.085714 & 0.142857 & 0.171429 & 0.057143 & 0.085714 & 0.257143 & 0.085714 \\
+	0.078947 & 0.184211 & 0.078947 & 0.131579 & 0.157895 & 0.052632 & 0.131579 & 0.184211 \\
+	0.102564 & 0.128205 & 0.102564 & 0.076923 & 0.179487 & 0.205128 & 0.076923 & 0.128205 \\
+\end{bmatrix}$$
+
+
+
+
+\section{保密增强算法实现方案}
+\subsection{输出密钥长度估算}
+
+XXXXXX。
+
+\begin{theorem}
+	假设函数簇$\{H_x:\{0,1\}^n\rightarrow \{0,1\}^l \}_{x\in X}$是一致哈希函数簇，信息调同过程的纠错码为$(n,k,t)$，任意随机输入$W$的极小熵为$m$，那么$l\leq m-(n-k)-2\log \frac{1}{\epsilon}+2$。
+\end{theorem}
+
+
+
+\begin{proof}
+	首先由剩余哈希引理可知，对任意的随机输入$W$，有
+	\begin{equation}
+		SD((H_x(W),X),(U_l,X)) \leq \frac{1}{2\sqrt{2^{-H_{\infty}(W)+l}}},
+		\label{eq5-12}
+	\end{equation}
+	其中，$U_l$表示$\{0,1\}^l$上的均匀分布。又$\frac{1}{2\sqrt{2^{-H_{\infty}(W)+l}}} \leq \epsilon$可知
+	\begin{equation}
+		l\leq m-2\log\frac{1}{\epsilon}+2,
+		\label{eq5-13}
+	\end{equation}
+	其中$m$表示平均条件下的$W$的极小熵，上述定理说明保密增强的熵损失为$2\log \frac{1}{\epsilon}-2$的比特数，即最多能够提取出$m-2\log \frac{1}{\epsilon}+2$长度的满熵比特。
+	
+	下面再证明信息调同过程中的熵损失为$(n-k)$即可。首先给出一个引理以便后续证明需要。
+	\begin{lemma}
+		假设$A,B,C$是随机变量，此时如果$B$至多有$2^{\lambda}$种可能的值，那么
+		\begin{equation}
+			\hat{H}_{\infty}(A|(B,C))\geq \hat{H}_{\infty}((A,B)|C)-\lambda \geq \hat{H}_{\infty}(A|C)-\lambda,
+			\label{eq5-14}
+		\end{equation}
+		特别的，
+		\begin{equation}
+			\hat{H}_{\infty}(A|B)\geq \hat{H}_{\infty}(A|B)-\lambda \geq H_{\infty}(A)-\lambda.
+			\label{eq5-15}
+		\end{equation}
+	\end{lemma}
+	
+	因此，如果公开的helper data至多有$2^{\lambda}$种可能的值，对于任意的信息调同的输入$W$，都有
+	\begin{equation}
+		\hat{H}_{\infty}(W|hd)\geq  H_{\infty}(W)-\lambda.
+		\label{eq5-16}
+	\end{equation}
+	即表明熵损失最多为$\lambda$。已知$n$表示纠错码码长，$k$表示纠错码的信息位的长度，helper data的长度也为$n$。
+	
+	那么由上述引理可知，
+	\begin{equation}
+		\hat{H}_{\infty}(W|(hd,I))\geq \hat{H}_{\infty}((W,hd)|I)-n,
+		\label{eq5-17}
+	\end{equation}
+	又因，
+	\begin{equation}
+		P(W=w,hd=s|I=i)\leq \frac{1}{2^{k}}P(W=w|I=i).
+		\label{eq5-18}
+	\end{equation}
+	利用式 (\ref{eq5-18}) 可得，
+	\begin{equation}
+		\hat{H}_{\infty}((W,hd)|I) \geq \hat{H}_{\infty}(W|I)+k,
+		\label{eq5-19}
+	\end{equation}
+	结合式 (\ref{eq5-17}) 和 式 (\ref{eq5-19}) 可知，
+	\begin{equation}
+		\hat{H}_{\infty}(W|(hd,I))\geq \hat{H}_{\infty}(W|I)+k-n.
+		\label{eq5-20}
+	\end{equation}
+	
+	所以，信息调同过程的熵损失为$(n-k)$。
+\end{proof}
+
+综上所述，超晶格密钥分发系统最终可提取出的密钥长度为$l\leq m-(n-k)-2\log \frac{1}{\epsilon}+2$，提取出的密钥是满熵的，且该协议过程无条件安全。
+
+
+\subsection{LFSR-Toeplitz提取器}
+
+XXXXXX。
+
+
+\subsection{基于FFT的加速方案}
+
+XXXXXX。
+
+\subsection{实验结果}
+
+XXXXXX。
+
+
+
+
+\section{本章小结}
+本章给出了
+

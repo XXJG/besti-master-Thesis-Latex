@@ -1,0 +1,289 @@
+\begin{thebibliography}{10}
+\providecommand{\bibauthor}[1]{#1}
+\providecommand{\bibeditor}[1]{#1}
+\providecommand{\bibtranslator}[1]{#1}
+\providecommand{\bibtitle}[1]{#1}
+\providecommand{\bibbooktitle}[1]{#1}
+\providecommand{\bibjournal}[1]{#1}
+\providecommand{\bibmark}[1]{#1}
+\providecommand{\bibcountry}[1]{#1}
+\providecommand{\bibpatentid}[1]{#1}
+\providecommand{\bibedition}[1]{#1}
+\providecommand{\biborganization}[1]{#1}
+\providecommand{\bibaddress}[1]{#1}
+\providecommand{\bibpublisher}[1]{#1}
+\providecommand{\bibinstitution}[1]{#1}
+\providecommand{\bibschool}[1]{#1}
+\providecommand{\bibvolume}[1]{#1}
+\providecommand{\bibnumber}[1]{#1}
+\providecommand{\bibversion}[1]{#1}
+\providecommand{\bibpages}[1]{#1}
+\providecommand{\bibmodifydate}[1]{#1}
+\providecommand{\bibcitedate}[1]{#1}
+\providecommand{\bibyear}[1]{#1}
+\providecommand{\bibdate}[1]{#1}
+\providecommand{\biburl}[1]{\newline\url{#1}}
+
+\bibitem{katz2020introduction}
+\bibauthor{KATZ J\@, LINDELL Y}\@. \bibbooktitle{Introduction to modern
+  cryptography}\bibmark{[M]}\@. \bibaddress{London}\thinspace{}\textnormal{:
+  }\bibpublisher{CRC press}\@, \bibyear{2020}\@.
+
+\bibitem{1996The}
+\bibauthor{KAHN D}\@. \bibtitle{{The Codebreakers}}\bibmark{[J]}\@.
+  \bibjournal{New York: Scribner's}\@, \bibyear{1967}\@.
+
+\bibitem{stinson2018cryptography}
+\bibauthor{STINSON D~R\@, PATERSON M}\@. \bibbooktitle{Cryptography: theory and
+  practice}\bibmark{[M]}\@. \bibaddress{London}\thinspace{}\textnormal{:
+  }\bibpublisher{CRC press}\@, \bibyear{2018}\@.
+
+\bibitem{buchmann2013introduction}
+\bibauthor{BUCHMANN J}\@. \bibbooktitle{Introduction to
+  cryptography}\bibmark{[M]}\@.
+  \bibaddress{Berlin/Heidelberg}\thinspace{}\textnormal{:
+  }\bibpublisher{Springer Science \& Business Media}\@, \bibyear{2013}\@.
+
+\bibitem{baiyanlin}
+\bibauthor{白炎林}\@.
+  \bibtitle{穿越时空的秘密——二战中的美军密码机(下)}\bibmark{[J]}\@.
+  \bibjournal{兵器}\@, \bibyear{2005}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{24\thinspace{}\textnormal{--}\thinspace{}28}\@.
+
+\bibitem{shinaier}
+\bibauthor{施奈尔\@, 吴世忠}\@.
+  \bibbooktitle{{应用密码学:协议、算法与C源程序}}\bibmark{[M]}\@.
+  \bibaddress{北京}\thinspace{}\textnormal{:
+  }\bibpublisher{机械工业出版社}\@, \bibyear{2000}\@.
+
+\bibitem{des1977}
+\bibauthor{DIFFIE W\@, HELLMAN M}\@. \bibtitle{{Special Feature Exhaustive
+  Cryptanalysis of the NBS Data Encryption Standard}}\bibmark{[J]}\@.
+  \bibjournal{Computer}\@, \bibyear{1977}\thinspace{}\textnormal{:
+  }\bibpages{74\thinspace{}\textnormal{--}\thinspace{}84}\@.
+
+\bibitem{standard2001announcing}
+\bibauthor{STANDARD N-F}\@. \bibtitle{{Announcing the advanced encryption
+  standard (AES)}}\bibmark{[J]}\@. \bibjournal{Federal Information Processing
+  Standards Publication}\@, \bibyear{2001}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}51}\@.
+
+\bibitem{lai1990proposal}
+\bibauthor{LAI X\@, MASSEY J~L}\@. \bibtitle{A proposal for a new block
+  encryption standard}\bibmark{[C]} //\thinspace{}\bibbooktitle{Advances in
+  Cryptology EUROCRYPT 1990}\@. \bibyear{1990}\thinspace{}\textnormal{:
+  }\bibpages{389\thinspace{}\textnormal{--}\thinspace{}404}\@.
+
+\bibitem{diffie1976new}
+\bibauthor{DIFFIE W\@, HELLMAN M}\@. \bibtitle{New directions in
+  cryptography}\bibmark{[J]}\@. \bibjournal{IEEE transactions on Information
+  Theory}\@, \bibyear{1976}\@,
+  \bibvolume{22}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{644\thinspace{}\textnormal{--}\thinspace{}654}\@.
+
+\bibitem{rivest1978method}
+\bibauthor{RIVEST R~L\@, SHAMIR A\@, ADLEMAN L}\@. \bibtitle{A method for
+  obtaining digital signatures and public-key cryptosystems}\bibmark{[J]}\@.
+  \bibjournal{Communications of the ACM}\@,
+  \bibyear{1978}\thinspace{}\textnormal{:
+  }\bibpages{120\thinspace{}\textnormal{--}\thinspace{}126}\@.
+
+\bibitem{elgamal1985public}
+\bibauthor{ELGAMAL T}\@. \bibtitle{A public key cryptosystem and a signature
+  scheme based on discrete logarithms}\bibmark{[J]}\@. \bibjournal{IEEE
+  transactions on information theory}\@,
+  \bibyear{1985}\thinspace{}\textnormal{:
+  }\bibpages{469\thinspace{}\textnormal{--}\thinspace{}472}\@.
+
+\bibitem{johnson2001elliptic}
+\bibauthor{JOHNSON D\@, MENEZES A\@, VANSTONE S}\@. \bibtitle{{The elliptic
+  curve digital signature algorithm (ECDSA)}}\bibmark{[J]}\@.
+  \bibjournal{International journal of information security}\@,
+  \bibyear{2001}\thinspace{}\textnormal{:
+  }\bibpages{36\thinspace{}\textnormal{--}\thinspace{}63}\@.
+
+\bibitem{menezes2018handbook}
+\bibauthor{MENEZES A~J\@, VAN~OORSCHOT P~C\@, VANSTONE S~A}\@.
+  \bibbooktitle{Handbook of applied cryptography}\bibmark{[M]}\@.
+  \bibaddress{London}\thinspace{}\textnormal{: }\bibpublisher{CRC press}\@,
+  \bibyear{2018}\@.
+
+\bibitem{steane1998quantum}
+\bibauthor{STEANE A}\@. \bibtitle{Quantum computing}\bibmark{[J]}\@.
+  \bibjournal{Reports on Progress in Physics}\@,
+  \bibyear{1998}\thinspace{}\textnormal{: }\bibpages{117}\@.
+
+\bibitem{bernstein2009introduction}
+\bibauthor{BERNSTEIN D~J}\@. \bibtitle{Introduction to post-quantum
+  cryptography}\bibmark{[G]} //\thinspace{}\bibbooktitle{Post-quantum
+  cryptography}\@. \bibaddress{Berlin}\thinspace{}\textnormal{:
+  }\bibpublisher{Springer}\@, \bibyear{2009}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}14}\@.
+
+\bibitem{shannon1949communication}
+\bibauthor{SHANNON C~E}\@. \bibtitle{Communication theory of secrecy
+  systems}\bibmark{[J]}\@. \bibjournal{The Bell system technical journal}\@,
+  \bibyear{1949}\thinspace{}\textnormal{:
+  }\bibpages{656\thinspace{}\textnormal{--}\thinspace{}715}\@.
+
+\bibitem{bb84first}
+\bibauthor{BENNETT C~H\@, GRASSARD G}\@. \bibtitle{{Quantum Cryptography:
+  Public Key Distribution and Coin Tossing}}\bibmark{[J]}\@.
+  \bibjournal{Proceedings of IEEE International Conference on Computers,
+  Systems, and Signal Processing}\@, \bibyear{1984}\thinspace{}\textnormal{:
+  }\bibpages{175\thinspace{}\textnormal{--}\thinspace{}179}\@.
+
+\bibitem{shor2000simple}
+\bibauthor{SHOR P~W\@, PRESKILL J}\@. \bibtitle{{Simple proof of security of
+  the BB84 quantum key distribution protocol}}\bibmark{[J]}\@.
+  \bibjournal{Physical review letters}\@,
+  \bibyear{2000}\thinspace{}\textnormal{: }\bibpages{441}\@.
+
+\bibitem{gisin2002quantum}
+\bibauthor{GISIN N\@, RIBORDY G\@, TITTEL W, et~al}\@. \bibtitle{Quantum
+  cryptography}\bibmark{[J]}\@. \bibjournal{Reviews of modern physics}\@,
+  \bibyear{2002}\thinspace{}\textnormal{: }\bibpages{145}\@.
+
+\bibitem{liuboliangzi}
+\bibauthor{刘博}\@.
+  \bibtitle{星地量子保密通信安全密钥提取关键技术研究}\bibmark{[D]}\@.
+  \bibaddress{长沙}\thinspace{}\textnormal{:
+  }\bibschool{国防科学技术大学}\@, \bibyear{2017}\@.
+
+\bibitem{xu2020secure}
+\bibauthor{XU F\@, MA X\@, ZHANG Q, et~al}\@. \bibtitle{Secure quantum key
+  distribution with realistic devices}\bibmark{[J]}\@. \bibjournal{Reviews of
+  Modern Physics}\@, \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{025002}\@.
+
+\bibitem{pirandola2020advances}
+\bibauthor{PIRANDOLA S\@, ANDERSEN U~L\@, BANCHI L, et~al}\@.
+  \bibtitle{Advances in quantum cryptography}\bibmark{[J]}\@.
+  \bibjournal{Advances in Optics and Photonics}\@,
+  \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{1012\thinspace{}\textnormal{--}\thinspace{}1236}\@.
+
+\bibitem{maes2013physically}
+\bibauthor{MAES R}\@. \bibtitle{{Physically unclonable functions:
+  Properties}}\bibmark{[G]} //\thinspace{}\bibbooktitle{Physically Unclonable
+  Functions}\@. \bibaddress{Berlin}\thinspace{}\textnormal{:
+  }\bibpublisher{Springer}\@, \bibyear{2013}\thinspace{}\textnormal{:
+  }\bibpages{49\thinspace{}\textnormal{--}\thinspace{}80}\@.
+
+\bibitem{bennett1992experimental}
+\bibauthor{BENNETT C~H\@, BESSETTE F\@, BRASSARD G, et~al}\@.
+  \bibtitle{Experimental quantum cryptography}\bibmark{[J]}\@.
+  \bibjournal{Journal of cryptology}\@, \bibyear{1992}\thinspace{}\textnormal{:
+  }\bibpages{3\thinspace{}\textnormal{--}\thinspace{}28}\@.
+
+\bibitem{Pappu2002Physical}
+\bibauthor{PAPPU\@, RAVIKANTH\@, RECHT, et~al}\@. \bibtitle{{Physical One-Way
+  Functions}}\bibmark{[J]}\@. \bibjournal{Science}\@, \bibyear{2002}\@.
+
+\bibitem{gassend2002}
+\bibauthor{GASSEND B\@, CLARKE D\@, van DIJK M, et~al}\@. \bibtitle{{Silicon
+  Physical Random Functions}}\bibmark{[J]}\@. \bibjournal{Association for
+  Computing Machinery}\@, \bibyear{2002}\thinspace{}\textnormal{:
+  }\bibpages{148\thinspace{}\textnormal{--}\thinspace{}160}\@.
+
+\bibitem{halak2018physically}
+\bibauthor{HALAK B}\@. \bibbooktitle{{Physically Unclonable Functions: From
+  Basic Design Principles to Advanced Hardware Security
+  Applications}}\bibmark{[M]}\@. \bibaddress{Berlin}\thinspace{}\textnormal{:
+  }\bibpublisher{Springer}\@, \bibyear{2018}\@.
+
+\bibitem{liu2018secret}
+\bibauthor{LIU W\@, YIN Z\@, CHEN X, et~al}\@. \bibtitle{A secret key
+  distribution technique based on semiconductor superlattice chaos
+  devices}\bibmark{[J]}\@. \bibjournal{Science Bulletin}\@,
+  \bibyear{2018}\thinspace{}\textnormal{:
+  }\bibpages{1034\thinspace{}\textnormal{--}\thinspace{}1036}\@.
+
+\bibitem{wu2020experimental}
+\bibauthor{WU H\@, YIN Z\@, TONG X, et~al}\@. \bibtitle{An experimental
+  demonstration of long-haul public-channel key distribution using matched
+  superlattice physical unclonable function pairs}\bibmark{[J]}\@.
+  \bibjournal{Science Bulletin}\@, \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{879\thinspace{}\textnormal{--}\thinspace{}882}\@.
+
+\bibitem{chen2020}
+\bibauthor{童新海\@, 陈小明\@, 徐述}\@.
+  \bibtitle{超晶格密码的研究进展}\bibmark{[J]}\@.
+  \bibjournal{科学通报}\@, \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{10\thinspace{}\textnormal{--}\thinspace{}18}\@.
+
+\bibitem{xie2021high}
+\bibauthor{XIE J\@, WU H\@, XIA C, et~al}\@. \bibtitle{High throughput error
+  correction in information reconciliation for semiconductor superlattice
+  secure key distribution}\bibmark{[J]}\@. \bibjournal{Scientific Reports}\@,
+  \bibyear{2021}\@, \bibvolume{11}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}9}\@.
+
+\bibitem{dodis2004fuzzy}
+\bibauthor{DODIS Y\@, REYZIN L\@, SMITH A}\@. \bibtitle{Fuzzy extractors: How
+  to generate strong keys from biometrics and other noisy data}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{International conference on the theory and
+  applications of cryptographic techniques}\@.
+  \bibyear{2004}\thinspace{}\textnormal{:
+  }\bibpages{523\thinspace{}\textnormal{--}\thinspace{}540}\@.
+
+\bibitem{bennett1995generalized}
+\bibauthor{BENNETT C~H\@, BRASSARD G\@, CR{\'E}PEAU C, et~al}\@.
+  \bibtitle{Generalized privacy amplification}\bibmark{[J]}\@. \bibjournal{IEEE
+  Transactions on Information theory}\@, \bibyear{1995}\@,
+  \bibvolume{41}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{1915\thinspace{}\textnormal{--}\thinspace{}1923}\@.
+
+\bibitem{carter1979universal}
+\bibauthor{CARTER J~L\@, WEGMAN M~N}\@. \bibtitle{Universal classes of hash
+  functions}\bibmark{[J]}\@. \bibjournal{Journal of computer and system
+  sciences}\@, \bibyear{1979}\@,
+  \bibvolume{18}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{143\thinspace{}\textnormal{--}\thinspace{}154}\@.
+
+\bibitem{gray2011entropy}
+\bibauthor{GRAY R~M}\@. \bibbooktitle{Entropy and information
+  theory}\bibmark{[M]}\@.
+  \bibaddress{Berlin/Heidelberg}\thinspace{}\textnormal{:
+  }\bibpublisher{Springer Science \& Business Media}\@, \bibyear{2011}\@.
+
+\bibitem{zhuxue2001}
+\bibauthor{朱雪龙}\@. \bibbooktitle{{应用信息论基础}}\bibmark{[M]}\@.
+  \bibaddress{北京}\thinspace{}\textnormal{:
+  }\bibpublisher{清华大学出版社}\@, \bibyear{2001}\@.
+
+\bibitem{lin2001error}
+\bibauthor{LIN S\@, COSTELLO D~J}\@. \bibbooktitle{Error control
+  coding\thinspace{}\textnormal{: }Vol~2}\bibmark{[M]}\@. \bibaddress{New
+  Jersey}\thinspace{}\textnormal{: }\bibpublisher{Prentice hall New York}\@,
+  \bibyear{2001}\@.
+
+\bibitem{gallager1962low}
+\bibauthor{GALLAGER R}\@. \bibtitle{Low-density parity-check
+  codes}\bibmark{[J]}\@. \bibjournal{IRE Transactions on information theory}\@,
+  \bibyear{1962}\@, \bibvolume{8}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{21\thinspace{}\textnormal{--}\thinspace{}28}\@.
+
+\bibitem{ryan2009channel}
+\bibauthor{RYAN W\@, LIN S}\@. \bibbooktitle{Channel codes: classical and
+  modern}\bibmark{[M]}\@. \bibaddress{London}\thinspace{}\textnormal{:
+  }\bibpublisher{Cambridge university press}\@, \bibyear{2009}\@.
+
+\bibitem{arikan2011systematic}
+\bibauthor{ARIKAN E}\@. \bibtitle{Systematic polar coding}\bibmark{[J]}\@.
+  \bibjournal{IEEE communications letters}\@, \bibyear{2011}\@,
+  \bibvolume{15}\bibnumber{(8)}\thinspace{}\textnormal{:
+  }\bibpages{860\thinspace{}\textnormal{--}\thinspace{}862}\@.
+
+\bibitem{brassard1993secret}
+\bibauthor{BRASSARD G\@, SALVAIL L}\@. \bibtitle{Secret-key reconciliation by
+  public discussion}\bibmark{[J]}\@, \bibyear{1993}\thinspace{}\textnormal{:
+  }\bibpages{410\thinspace{}\textnormal{--}\thinspace{}423}\@.
+
+\bibitem{mackay1996near}
+\bibauthor{MACKAY D~J\@, NEAL R~M}\@. \bibtitle{Near Shannon limit performance
+  of low density parity check codes}\bibmark{[J]}\@. \bibjournal{Electronics
+  letters}\@, \bibyear{1996}\@,
+  \bibvolume{32}\bibnumber{(18)}\thinspace{}\textnormal{: }\bibpages{1645}\@.
+
+\end{thebibliography}

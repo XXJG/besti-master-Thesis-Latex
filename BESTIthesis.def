@@ -1,0 +1,96 @@
+
+\ProvidesFile{BESTIthesis.def}[2022/01/01 BESTI, Thesis document class, version 0.1.0]
+
+% General
+\def\BESTI@label@university{北京电子科技学院}
+\def\BESTI@elabel@university{Beijing Electronic Science and Technology Institute}
+
+% 封面
+\def\BESTI@label@cover@UDC{学校代码\hspace*{0.9em}}
+\def\BESTI@label@cover@studentNo{学\quad{}号\hspace*{0.9em}}
+\def\BESTI@label@cover@classification{分\hspace*{0.5em}类\hspace*{0.5em}号\hspace*{0.9em}}
+\def\BESTI@label@cover@confidential{密\quad{}级\hspace*{0.9em}}
+\def\BESTI@label@cover@author{作者姓名：}
+\def\BESTI@label@cover@major{一级学科：}
+\def\BESTI@label@cover@submajor{二级学科（研究方向）：}
+\def\BESTI@label@cover@degree{学位类别：}
+\def\BESTI@label@cover@advisor{指导教师姓名、职称：}
+\def\BESTI@elabel@cover@advisor{Supervisor:~}
+\def\BESTI@label@cover@school{学\hspace*{2.05em}院：}
+\def\BESTI@label@cover@submit@date{提交日期：}
+
+\def\BESTI@label@cover@schoolAdvisor{学校导师姓名、职称}
+\def\BESTI@label@cover@industrialAdvisor{企业导师姓名、职称}
+\def\BESTI@label@cover@field{领{\quad\quad}域}
+\def\BESTI@elabel@cover@thesis@ProMasterTitle{Title of the Thesis for Professional Master's Degree of XIDIAN UNIVERSITY}
+
+% 声明和版权
+\def\BESTI@label@stat@statement{北京电子科技学院\\ 学位论文独创性（或创新性）声明}
+\def\BESTI@lable@stat@copyright{北京电子科技学院\\ 关于论文使用授权的说明}
+\def\BESTI@lable@stat@auther{本人签名：}
+\def\BESTI@lable@stat@advisor{导师签名：}
+\def\BESTI@lable@stat@date{日\hspace*{2em}期：}
+
+\def\BESTI@value@stat@statement{秉承学校严谨的学风和优良的科学道德，
+本人声明所呈交的论文是我个人在导师指导下进行的研究工作及取得的研究
+成果。尽我所知，除了文中特别加以标注和致谢中所罗列的内容以外，论文
+中不包含其他人已经发表或撰写过的研究成果；也不包含为获得北京电子科技学院或其它教育机构的学位或证书而使用过的材料。与我一同工作的同事
+对本研究所做的任何贡献均已在论文中作了明确的说明并表示了谢意。
+
+学位论文若有不实之处，本人承担一切法律责任。}
+
+\def\BESTI@value@stat@copyright{本人完全了解北京电子科技学院有关保留
+和使用学位论文的规定，即：研究生在校攻读学位期间论文工作的知识产权
+属于北京电子科技学院。学校有权保留送交论文的复印件，允许查阅、借阅
+论文；学校可以公布论文的全部或部分内容，允许采用影印、缩印或其它复
+制手段保存论文。同时本人保证，结合学位论文研究成果完成的论文、发明
+专利等成果，署名单位为北京电子科技学院。
+
+保密的学位论文在\rule[-2pt]{1cm}{0.5pt}年解密后适用本授权书。}
+
+% chapter
+\def\BESTI@chapter@prenumber{第}
+\def\BESTI@chapter@afternumber{章}
+
+% 图表名称
+\def\BESTI@label@figure@cap{图}
+\def\BESTI@label@table@cap{表}
+
+% 摘要
+\def\BESTI@label@abstract{摘要}
+\def\BESTI@elabel@abstract{ABSTRACT}
+\def\BESTI@elabel@graphindex{插图索引}
+\def\BESTI@toc@abstract{摘要}
+\def\BESTI@etoc@abstract{ABSTRACT}
+\def\BESTI@etoc@graphindex{插图索引}
+\def\BESTI@label@keywords{关键词：}
+\def\BESTI@elabel@keywords{Keywords:}
+
+% 目录
+\def\BESTI@label@listoffigures{插图索引}
+\def\BESTI@toc@listoffigures{插图索引}
+\def\BESTI@label@listoftables{表格索引}
+\def\BESTI@toc@listoftables{表格索引}
+\def\BESTI@label@symbollist@title{符号对照表}
+\def\BESTI@toc@symbollist@title{符号对照表}
+\def\BESTI@label@abbreviationlist@title{缩略语对照表}
+\def\BESTI@toc@abbreviationlist@title{缩略语对照表}
+\def\BESTI@label@content{目录}
+\def\BESTI@toc@content{目录}
+
+% 参考文献
+\def\BESTI@label@ref@title{参考文献}
+\def\BESTI@toc@ref@title{参考文献}
+
+% 致谢
+\def\BESTI@label@thanks{致谢}
+\def\BESTI@toc@thanks{致谢}
+
+% 简历
+\def\BESTI@label@resume@title{作者简介}
+\def\BESTI@toc@resume@title{作者简介}
+\def\BESTI@label@resume@baseinfo{基本情况}
+\def\BESTI@label@resume@name{姓名：}
+\def\BESTI@label@resume@sex{性别：}
+\def\BESTI@label@resume@birthday{出生日期：}
+\def\BESTI@label@resume@place{籍贯：}
